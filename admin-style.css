@@ -1,0 +1,448 @@
+/* =========================================================
+   ADMIN PANEL STYLES
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #f5f5f5;
+    color: #333;
+}
+
+/* =========================================================
+   LOGIN PAGE
+========================================================= */
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #073769 0%, #0b2d59 100%);
+}
+
+.login-box {
+    background: white;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-box h1 {
+    color: #073769;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.login-box p {
+    color: #ff7026;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #ff7026;
+    box-shadow: 0 0 0 3px rgba(255, 112, 38, 0.1);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: #ff7026;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 10px;
+}
+
+.login-btn:hover {
+    background: #f35e16;
+}
+
+.hint {
+    text-align: center;
+    color: #999;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+/* =========================================================
+   ADMIN DASHBOARD
+========================================================= */
+
+.admin-dashboard {
+    display: flex;
+    min-height: 100vh;
+    background: #f5f5f5;
+}
+
+.admin-sidebar {
+    width: 280px;
+    background: #073769;
+    padding: 30px 20px;
+    color: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-header {
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 20px;
+}
+
+.sidebar-header h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.logout-btn {
+    width: 100%;
+    padding: 8px;
+    background: #ff7026;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: #f35e16;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-btn {
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-btn.active {
+    background: #ff7026;
+}
+
+/* =========================================================
+   ADMIN MAIN CONTENT
+========================================================= */
+
+.admin-main {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.tab-content {
+    display: none;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content h2 {
+    color: #073769;
+    margin-bottom: 30px;
+    font-size: 26px;
+    border-bottom: 2px solid #ff7026;
+    padding-bottom: 15px;
+}
+
+.tab-content h3 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 18px;
+    margin-top: 25px;
+}
+
+.tab-content > .tab-content:first-of-type h3 {
+    margin-top: 0;
+}
+
+/* =========================================================
+   GALLERY SECTION
+========================================================= */
+
+.gallery-upload {
+    margin-top: 20px;
+}
+
+.gallery-upload p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.image-item {
+    background: #f9f9f9;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.image-item:hover {
+    border-color: #ff7026;
+    box-shadow: 0 5px 15px rgba(255, 112, 38, 0.2);
+}
+
+.image-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+.image-controls {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.image-controls input[type="file"] {
+    padding: 6px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.image-controls button {
+    padding: 8px;
+    background: #ff7026;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.image-controls button:hover {
+    background: #f35e16;
+}
+
+/* =========================================================
+   FORM SECTIONS
+========================================================= */
+
+.form-section {
+    margin-bottom: 30px;
+}
+
+.form-section h3 {
+    color: #333;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ff7026;
+    box-shadow: 0 0 0 3px rgba(255, 112, 38, 0.1);
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-group span {
+    color: #666;
+    font-weight: 600;
+}
+
+.input-group input {
+    flex: 1;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.save-btn {
+    padding: 14px 40px;
+    background: #ff7026;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 20px;
+}
+
+.save-btn:hover {
+    background: #f35e16;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+.success-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4caf50;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+    .admin-dashboard {
+        flex-direction: column;
+    }
+
+    .admin-sidebar {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .nav-btn {
+        flex: 1;
+        min-width: 150px;
+    }
+
+    .admin-main {
+        padding: 20px;
+    }
+
+    .image-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+/* Upgrade additions */
+.image-item.gallery-admin-card { min-width:0; }
+.gallery-admin-card .image-controls { display:flex; flex-direction:column; gap:9px; }
+.gallery-admin-card .image-controls label { font-size:13px; font-weight:700; color:#555; }
+.gallery-admin-card .image-controls input,
+.gallery-admin-card .image-controls textarea { width:100%; box-sizing:border-box; }
+.admin-card-actions { display:flex; gap:10px; margin-top:8px; }
+.secondary-btn { background:#222 !important; }
+.delete-btn { border:0; padding:11px 18px; border-radius:8px; background:#e53935; color:#fff; font-weight:600; cursor:pointer; }
+.delete-btn:hover { background:#c62828; }
+.admin-reviews-list { display:grid; gap:15px; }
+.admin-review-card { background:#fff; border:1px solid #e6e6e6; border-radius:12px; padding:20px; box-shadow:0 4px 15px rgba(0,0,0,.05); }
+.admin-review-card .review-head { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:8px; }
+.admin-review-card p { color:#555; line-height:1.6; margin:8px 0; }
+.admin-review-card small { color:#888; display:block; margin-bottom:14px; }
+.admin-review-card .delete-btn { width:auto; }
+.form-group small { display:block; margin-top:6px; color:#777; font-size:12px; }
+@media(max-width:768px){ .admin-card-actions{flex-direction:column}.admin-review-card .review-head{align-items:flex-start;flex-direction:column} }

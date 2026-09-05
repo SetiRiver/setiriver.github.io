@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews - Seti RiverSide Resort</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body class="reviews-page">
+
+<section class="reviews-page-top">
+    <header class="navbar" id="topNav">
+        <div class="brand"><img src="logo.png" alt="Seti RiverSide Resort"><span>Seti RiverSide Resort</span></div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false" type="button"><span></span><span></span><span></span></button>
+        <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+            <a href="index.html#home" class="nav-link">HOME</a>
+            <a href="gallery.html" class="nav-link">GALLERY</a>
+            <a href="index.html#about" class="nav-link">ABOUT US</a>
+            <a href="index.html#destination" class="nav-link">DESTINATION</a>
+            <a href="index.html#contact" class="nav-link">CONTACT</a>
+        </nav>
+    </header>
+    <div class="reviews-page-title"><span class="hero-small-title">[ GUEST EXPERIENCES ]</span><h1>Reviews</h1></div>
+</section>
+
+<main>
+    <section class="reviews-section" id="guestReviews">
+        <div class="reviews-section-inner">
+            <div class="reviews-heading-row">
+                <div>
+                    <span class="section-label">[ WHAT OUR GUESTS SAY ]</span>
+                    <h2>Real experiences from our visitors</h2>
+                </div>
+                <a class="google-all-btn" id="googleReviewsLink" href="#" target="_blank" rel="noopener">View All Google Reviews</a>
+            </div>
+
+            <div class="google-review-card" id="googleReviewCard" style="display:none;">
+                <div class="google-review-top">
+                    <div class="google-stars" id="googleStars">★★★★★</div>
+                    <span class="google-pill">Google</span>
+                </div>
+                <p class="google-review-text" id="googleReviewText">Google reviews will appear here automatically once Google Places API is connected.</p>
+                <div class="google-review-person">
+                    <div class="review-avatar" id="googleAvatar">G</div>
+                    <div>
+                        <strong id="googleReviewer">Seti Riverside Resort</strong>
+                        <span id="googleReviewMeta">Google Reviews</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-layout">
+                <form class="review-form" id="reviewForm">
+                    <span class="section-label">[ SHARE YOUR EXPERIENCE ]</span>
+                    <h2>Leave a Review</h2>
+                    <div class="review-field"><label for="reviewName">Your Real Name</label><input id="reviewName" required maxlength="80" autocomplete="name" placeholder="Enter your name"></div>
+                    <div class="review-field"><label for="reviewEmail">Your Real Email</label><input id="reviewEmail" type="email" required maxlength="160" autocomplete="email" placeholder="you@example.com"></div>
+                    <div class="review-field"><label>Your Rating</label><div class="stars"><input id="star5" type="radio" name="rating" value="5" checked><label for="star5">★</label><input id="star4" type="radio" name="rating" value="4"><label for="star4">★</label><input id="star3" type="radio" name="rating" value="3"><label for="star3">★</label><input id="star2" type="radio" name="rating" value="2"><label for="star2">★</label><input id="star1" type="radio" name="rating" value="1"><label for="star1">★</label></div></div>
+                    <div class="review-field"><label for="reviewText">Review Description</label><textarea id="reviewText" required maxlength="1000" placeholder="Tell us about your experience"></textarea></div>
+                    <button class="review-submit" id="reviewSubmit" type="submit">Submit Review</button>
+                    <p class="review-note">Your email is stored for the resort administrator and is never displayed publicly.</p>
+                    <div class="review-message" id="reviewMessage"></div>
+                </form>
+
+                <section class="visitor-review-list">
+                    <div class="visitor-review-heading"><div><span class="section-label">[ LIVE VISITOR REVIEWS ]</span><h2>What Our Visitors Say</h2></div><span class="live-badge">● LIVE</span></div>
+                    <div id="reviewItems" class="review-items"><p class="empty-reviews">Loading reviews...</p></div>
+                </section>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer" id="contact">
+    <div class="footer-container">
+        <div class="footer-brand"><div class="footer-logo-wrap"><div class="footer-logo"><span>⌂</span></div></div><h3>SETI RIVERSIDE RESORT</h3><p>A peaceful riverside escape surrounded by nature. Relax, refresh, and create unforgettable memories.</p><div class="socials" id="socialMediaLinks"><a href="#" id="facebookBtn" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#" id="instagramBtn" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#" id="tiktokBtn" class="social-btn" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></div></div>
+        <div class="footer-column"><h4>RESORT</h4><ul><li><a href="index.html#about">About Us</a></li><li><a href="index.html#rooms">Rooms</a></li><li><a href="review.html">Reviews</a></li></ul></div>
+        <div class="footer-column facilities-column"><h4>Explore</h4><ul><li><a href="gallery.html">Gallery</a></li><li><span class="footer-facilities-title">Facilities</span><ul class="footer-sub-list"><li><a href="#">Swimming Pool</a></li><li><a href="#">Cave Experience</a></li><li><a href="#">Single Attached Room</a></li><li><a href="#">Double Attached Room</a></li></ul></li></ul></div>
+        <div class="footer-column"><h4>CONTACT</h4><ul><li><a href="index.html#contact">Make a Reservation</a></li><li><a href="#" id="footerPhoneLink">Call: <span data-phone>Loading...</span></a></li><li><a href="mailto:setiriverresort@gmail.com"><span data-email>setiriverresort@gmail.com</span></a></li></ul></div>
+    </div>
+    <div class="footer-bottom">Copyright © 2025 - SETI RIVERSIDE RESORT • All rights reserved</div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+<script src="firebase-website.js"></script>
+<script>
+(function(){
+    const menuToggle=document.getElementById('menuToggle'),mainNav=document.getElementById('mainNav');
+    if(menuToggle&&mainNav){menuToggle.addEventListener('click',()=>{const open=mainNav.classList.toggle('mobile-open');menuToggle.classList.toggle('active',open);menuToggle.setAttribute('aria-expanded',String(open));document.body.classList.toggle('menu-open',open)});mainNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mainNav.classList.remove('mobile-open');menuToggle.classList.remove('active');menuToggle.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open')}))}
+    const db=window.firebaseDB;
+    function esc(v){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+    function renderReviews(data){
+        const box=document.getElementById('reviewItems');
+        const items=Object.entries(data||{}).map(([id,v])=>({id,...v})).filter(v=>v&&v.name&&v.review&&v.visible!==false).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));
+        if(!items.length){box.innerHTML='<p class="empty-reviews">No visitor reviews yet. Be the first to share your experience.</p>';return;}
+        box.innerHTML=items.map(v=>{const rating=Math.max(1,Math.min(5,Number(v.rating)||5));return `<article class="review-card"><div class="review-card-top"><span class="review-stars">${'★'.repeat(rating)}${'☆'.repeat(5-rating)}</span><span class="visitor-label">Visitor</span></div><h3>${esc(v.name)}</h3><p>${esc(v.review)}</p><small>${v.createdAt?new Date(v.createdAt).toLocaleDateString():''}</small></article>`}).join('');
+    }
+    function ensureSectionVisibility() {
+        const hash = window.location.hash;
+        if (!hash) return;
+        const target = document.querySelector(hash);
+        if (!target) return;
+        const navHeight = document.getElementById('topNav') ? 76 : 0;
+        const top = target.getBoundingClientRect().top + window.scrollY - (navHeight + 22);
+        window.scrollTo({ top, behavior: 'auto' });
+    }
+
+    if(db) db.ref('reviews').on('value',s=>renderReviews(s.val()||{}));
+    if(db) db.ref('google-reviews').on('value',s=>{
+        const item=Object.values(s.val()||{}).find(v=>v&&v.visible===true);
+        if(!item)return;
+        const rating=Math.max(1,Math.min(5,Number(item.rating)||5));
+        document.getElementById('googleStars').textContent='★'.repeat(rating)+'☆'.repeat(5-rating);
+        document.getElementById('googleReviewText').textContent=item.text||'';
+        document.getElementById('googleReviewer').textContent=item.author||'Google visitor';
+        document.getElementById('googleAvatar').textContent=(item.author||'G').charAt(0).toUpperCase();
+        document.getElementById('googleReviewMeta').textContent='Google Review';
+    });
+    document.getElementById('reviewForm').addEventListener('submit',e=>{
+        e.preventDefault(); if(!db)return;
+        const name=document.getElementById('reviewName').value.trim(),email=document.getElementById('reviewEmail').value.trim(),review=document.getElementById('reviewText').value.trim(),rating=Number(document.querySelector('input[name="rating"]:checked')?.value||5),msg=document.getElementById('reviewMessage'),btn=document.getElementById('reviewSubmit');
+        if(!name||!email||!review){msg.textContent='Please complete all fields.';return;}
+        btn.disabled=true;msg.textContent='Submitting...';
+        db.ref('reviews').push({name,email,review,rating,createdAt:firebase.database.ServerValue.TIMESTAMP}).then(()=>{e.target.reset();document.getElementById('star5').checked=true;msg.textContent='Thank you. Your review is now live on the website.'}).catch(()=>{msg.textContent='Could not submit your review. Please try again.'}).finally(()=>btn.disabled=false);
+    });
+    window.addEventListener('load', ensureSectionVisibility);
+    window.addEventListener('hashchange', ensureSectionVisibility);
+})();
+</script>
+</body>
+</html>
