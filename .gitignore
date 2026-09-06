@@ -14,7 +14,9 @@ firebase-debug.*.log*
 .env
 .env.local
 firebase-config.js
-firebase-config.local.js
+
+firebase.json
+firebase-website.js
 .firebaserc
 
 # Runtime data
