@@ -107,10 +107,15 @@
         window.scrollTo({ top, behavior: 'auto' });
     }
 
+    const googleReviewsLink = document.getElementById('googleReviewsLink');
+    const defaultGoogleReviewsUrl = 'https://www.google.com/maps/search/?api=1&query=Seti+Riverside+Resort+Pokhara';
+    googleReviewsLink.href = defaultGoogleReviewsUrl;
+
     if(db) db.ref('reviews').on('value',s=>renderReviews(s.val()||{}));
     if(db) db.ref('google-reviews').on('value',s=>{
         const item=Object.values(s.val()||{}).find(v=>v&&v.visible===true);
         if(!item)return;
+        googleReviewsLink.href = item.url || item.link || defaultGoogleReviewsUrl;
         const rating=Math.max(1,Math.min(5,Number(item.rating)||5));
         document.getElementById('googleStars').textContent='★'.repeat(rating)+'☆'.repeat(5-rating);
         document.getElementById('googleReviewText').textContent=item.text||'';
