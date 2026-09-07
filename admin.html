@@ -4,6 +4,7 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Admin Panel - Seti RiverSide Resort</title><link rel="stylesheet" href="admin-style.css">
 </head>
 <body>
+  <link rel="icon" type="image/png" href="images/logo.png">
 <div id="loginPage" class="login-container"><div class="login-box"><h1>Admin Login</h1><p>Seti RiverSide Resort</p><form id="loginForm" onsubmit="handleLogin(event)"><div class="form-group"><label for="email">Email</label><input type="email" id="email" required autocomplete="email" placeholder="Enter admin email"></div><div class="form-group"><label for="password">Password</label><input type="password" id="password" required autocomplete="current-password" placeholder="Enter password"></div><button type="submit" class="login-btn" id="loginButton">Login</button></form></div></div>
 <div id="adminDashboard" class="admin-dashboard" style="display:none"><aside class="admin-sidebar"><div class="sidebar-header"><h2>Admin Panel</h2><button class="logout-btn" onclick="handleLogout()">Logout</button></div><nav class="sidebar-nav"><button class="nav-btn active" onclick="switchTab('gallery',this)">📷 Gallery</button><button class="nav-btn" onclick="switchTab('reviews',this)">⭐ Reviews</button><button class="nav-btn" onclick="switchTab('contact',this)">📞 Contact Info</button><button class="nav-btn" onclick="switchTab('social',this)">📱 Social Media</button></nav></aside>
 <main class="admin-main">
