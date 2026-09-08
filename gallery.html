@@ -119,8 +119,11 @@
             image2:{url:'2.jpeg',title:'Refresh. Relax. Enjoy.',description:'Take a refreshing break surrounded by nature.',order:2},
             image3:{url:'3.jpeg',title:'Stay in Comfort',description:'Relax in comfortable rooms surrounded by greenery.',order:3}
         };
-        const source = Object.keys(data || {}).length ? data : defaults;
-        const items = Object.entries(source).map(([key,item]) => ({key,...item})).filter(item => item.url || item.base64);
+        const source = data && typeof data === 'object' ? data : {};
+        let items = Object.entries(source)
+            .map(([key, item]) => ({key, ...(item && typeof item === 'object' ? item : {})}))
+            .filter(item => item.url || item.base64);
+        if (!items.length) items = Object.entries(defaults).map(([key, item]) => ({key, ...item}));
         items.sort((a,b) => (a.order ?? 999999) - (b.order ?? 999999));
         scroller.innerHTML = items.map((item,i) => `
             <article class="gallery-grid-card">
