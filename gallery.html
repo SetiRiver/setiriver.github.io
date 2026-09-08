@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <link rel="icon" type="image/png" href="logo.png">
+     <link rel="icon" type="image/png" href="logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - Seti RiverSide Resort</title>
@@ -50,10 +50,8 @@
 
         <div class="section-line"></div>
 
-        <div class="gallery-horizontal-wrap">
-            <button class="gallery-scroll-button left hidden" id="galleryScrollLeft" type="button" aria-label="Scroll gallery left">←</button>
-            <div class="gallery-horizontal" id="galleryScroller" aria-label="Scrollable resort gallery"></div>
-            <button class="gallery-scroll-button right" id="galleryScrollRight" type="button" aria-label="Scroll gallery right">→</button>
+        <div class="gallery-grid-wrap">
+            <div class="gallery-grid" id="galleryScroller" aria-label="Resort gallery"></div>
         </div>
         <div id="galleryStatus" class="gallery-status">Loading gallery...</div>
     </div>
@@ -112,39 +110,6 @@
     }
 
     const scroller = document.getElementById('galleryScroller');
-    const rightButton = document.getElementById('galleryScrollRight');
-    const leftButton = document.getElementById('galleryScrollLeft');
-    let dragging = false, startX = 0, startScroll = 0;
-
-    function updateScrollButtons() {
-        if (!scroller) return;
-        const maxScroll = scroller.scrollWidth - scroller.clientWidth;
-        const atStart = scroller.scrollLeft <= 12;
-        const atEnd = scroller.scrollLeft >= maxScroll - 12;
-
-        leftButton.classList.toggle('hidden', atStart || maxScroll <= 0);
-        rightButton.classList.toggle('hidden', atEnd || maxScroll <= 0);
-    }
-
-    scroller.addEventListener('pointerdown', e => {
-        dragging = true;
-        startX = e.clientX;
-        startScroll = scroller.scrollLeft;
-        scroller.classList.add('dragging');
-        scroller.setPointerCapture(e.pointerId);
-    });
-    scroller.addEventListener('pointermove', e => {
-        if (dragging) scroller.scrollLeft = startScroll - (e.clientX - startX) * 1.15;
-    });
-    ['pointerup','pointercancel'].forEach(type => scroller.addEventListener(type, () => {
-        dragging = false;
-        scroller.classList.remove('dragging');
-        updateScrollButtons();
-    }));
-    scroller.addEventListener('scroll', updateScrollButtons, { passive: true });
-    leftButton.addEventListener('click', () => scroller.scrollBy({left: -Math.max(280, scroller.clientWidth * .7), behavior:'smooth'}));
-    rightButton.addEventListener('click', () => scroller.scrollBy({left: Math.max(280, scroller.clientWidth * .7), behavior:'smooth'}));
-
     function esc(v) {
         return String(v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     }
@@ -158,7 +123,7 @@
         const items = Object.entries(source).map(([key,item]) => ({key,...item})).filter(item => item.url || item.base64);
         items.sort((a,b) => (a.order ?? 999999) - (b.order ?? 999999));
         scroller.innerHTML = items.map((item,i) => `
-            <article class="gallery-horizontal-card">
+            <article class="gallery-grid-card">
                 <img src="${esc(item.base64 || item.url)}" alt="${esc(item.title || 'Seti Riverside Resort gallery image')}">
                 <div class="card-content">
                     <span class="card-location"><span class="location-icon">●</span> Seti Riverside</span>
@@ -167,7 +132,6 @@
                 </div>
             </article>`).join('');
         document.getElementById('galleryStatus').textContent = items.length ? '' : 'No gallery images have been added yet.';
-        updateScrollButtons();
     }
 
     renderGallery({});
