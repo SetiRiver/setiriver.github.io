@@ -1,6 +1,6 @@
 // Firebase configuration - Seti RiverSide Resort Admin Panel
 const firebaseConfig = {
-    apiKey: "AIzaSyDvwxmIQHAGLx7Lt6r38rHFLQVUznHvJp8",
+    apiKey: "AIzaSyBdhcN_5FXIaBOidpa_M9zB7ErKzvmufgk",
     authDomain: "seti-river-resort.firebaseapp.com",
     databaseURL: "https://seti-river-resort-default-rtdb.asia-southeast1.firebasedatabase.app",
     projectId: "seti-river-resort",

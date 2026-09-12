@@ -42,12 +42,12 @@
             </button>
 
             <nav class="main-nav" id="mainNav" aria-label="Main navigation">
-            <a href="index.html#home" class="nav-link">HOME</a>
-            <a href="index.html#about" class="nav-link">ABOUT US</a>
-            <a href="gallery.html" class="nav-link active">GALLERY</a>
-            <a href="index.html#destination" class="nav-link">DESTINATION</a>
-            <a href="index.html#contact" class="nav-link">CONTACT</a>
-        </nav>
+                <a href="#home" class="nav-link active">HOME</a>
+                <a href="#about" class="nav-link">ABOUT US</a>
+                <a href="/gallery" class="nav-link">GALLERY</a>
+                <a href="#destination" class="nav-link">DESTINATION</a>
+                <a href="#contact" class="nav-link">CONTACT</a>
+            </nav>
 
         </header>
 
@@ -144,7 +144,7 @@
                     </p>
 
 
-                    <a href="review.html" class="primary-btn">
+                    <a href="/review" class="primary-btn">
                         Reviews
                     </a>
 
@@ -186,8 +186,8 @@
 
                         <div class="why-card-top">
 
-                            <div class="why-icon">
-                                ♧
+                            <div class="why-icon" data-about-icon="location">
+                                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                             </div>
 
                             <span class="number">
@@ -215,8 +215,8 @@
 
                         <div class="why-card-top">
 
-                            <div class="why-icon wave-icon">
-                                〰
+                            <div class="why-icon wave-icon" data-about-icon="pool">
+                                <i class="fa-solid fa-person-swimming" aria-hidden="true"></i>
                             </div>
 
                             <span class="number">
@@ -243,8 +243,8 @@
 
                         <div class="why-card-top">
 
-                            <div class="why-icon">
-                                ♙
+                            <div class="why-icon" data-about-icon="rooms">
+                                <i class="fa-solid fa-bed" aria-hidden="true"></i>
                             </div>
 
                             <span class="number">
@@ -271,8 +271,8 @@
 
                         <div class="why-card-top">
 
-                            <div class="why-icon">
-                                ◉
+                            <div class="why-icon" data-about-icon="experience">
+                                <i class="fa-solid fa-mountain-sun" aria-hidden="true"></i>
                             </div>
 
                             <span class="number">
@@ -358,14 +358,14 @@
                 <ul>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#rooms">Rooms</a></li>
-                    <li><a href="review.html">Reviews</a></li>
+                    <li><a href="/review">Reviews</a></li>
                 </ul>
             </div>
 
             <div class="footer-column facilities-column">
                 <h4>Explore</h4>
                 <ul>
-                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="/gallery">Gallery</a></li>
                     <li>
                         <span class="footer-facilities-title">Facilities</span>
                         <ul class="footer-sub-list">
@@ -467,12 +467,10 @@
                 }
 
                 event.preventDefault();
-                if (history.pushState) {
-                    history.pushState(null, '', hash);
-                } else {
-                    window.location.hash = hash;
-                }
                 scrollToHash(hash, true);
+                if (history.replaceState) {
+                    history.replaceState(null, '', window.location.pathname + window.location.search);
+                }
             });
         });
 

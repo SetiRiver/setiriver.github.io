@@ -7,6 +7,16 @@
       "**/node_modules/**",
       ".firebaserc",
       ".git*"
+    ],
+    "rewrites": [
+      {
+        "source": "/gallery",
+        "destination": "/gallery.html"
+      },
+      {
+        "source": "/review",
+        "destination": "/review.html"
+      }
     ]
   }
 }

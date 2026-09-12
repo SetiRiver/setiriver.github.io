@@ -20,11 +20,11 @@
             <span></span><span></span><span></span>
         </button>
         <nav class="main-nav" id="mainNav" aria-label="Main navigation">
-            <a href="index.html#home" class="nav-link">HOME</a>
-            <a href="index.html#about" class="nav-link">ABOUT US</a>
-            <a href="gallery.html" class="nav-link active">GALLERY</a>
-            <a href="index.html#destination" class="nav-link">DESTINATION</a>
-            <a href="index.html#contact" class="nav-link">CONTACT</a>
+            <a href="/" class="nav-link">HOME</a>
+            <a href="/#about" class="nav-link">ABOUT US</a>
+            <a href="/gallery" class="nav-link active">GALLERY</a>
+            <a href="/#destination" class="nav-link">DESTINATION</a>
+            <a href="/#contact" class="nav-link">CONTACT</a>
         </nav>
     </header>
 
@@ -70,16 +70,16 @@
             </div>
         </div>
         <div class="footer-column"><h4>RESORT</h4><ul>
-            <li><a href="index.html#about">About Us</a></li>
-            <li><a href="index.html#rooms">Rooms</a></li>
-            <li><a href="review.html">Reviews</a></li>
+            <li><a href="/#about">About Us</a></li>
+            <li><a href="/#rooms">Rooms</a></li>
+            <li><a href="/review">Reviews</a></li>
         </ul></div>
         <div class="footer-column facilities-column"><h4>Explore</h4><ul>
-            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="/gallery">Gallery</a></li>
             <li><span class="footer-facilities-title">Facilities</span><ul class="footer-sub-list"><li><a href="#">Swimming Pool</a></li><li><a href="#">Cave Experience</a></li><li><a href="#">Single Attached Room</a></li><li><a href="#">Double Attached Room</a></li></ul></li>
         </ul></div>
         <div class="footer-column"><h4>CONTACT</h4><ul>
-            <li><a href="index.html#contact">Make a Reservation</a></li>
+            <li><a href="/#contact">Make a Reservation</a></li>
             <li><a href="#" id="footerPhoneLink">Call: <span data-phone>Loading...</span></a></li>
             <li><a href="mailto:setiriverresort@gmail.com"><span data-email>setiriverresort@gmail.com</span></a></li>
         </ul></div>
@@ -110,6 +110,7 @@
     }
 
     const scroller = document.getElementById('galleryScroller');
+
     function esc(v) {
         return String(v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     }

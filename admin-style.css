@@ -404,6 +404,87 @@ body {
         flex-direction: column;
     }
 
+    /* Neutral administrative interface */
+    body {
+        background: #f4f4f4;
+        color: #171717;
+    }
+
+    .login-container {
+        background: #111;
+    }
+
+    .login-box,
+    .tab-content {
+        border: 1px solid #d6d6d6;
+        border-radius: 4px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+    }
+
+    .login-box h1,
+    .tab-content h2,
+    .tab-content h3 {
+        color: #171717;
+    }
+
+    .login-box p,
+    .tab-content h2 {
+        border-color: #171717;
+    }
+
+    .admin-sidebar {
+        background: #171717;
+        box-shadow: none;
+    }
+
+    .logout-btn,
+    .login-btn,
+    .save-btn,
+    .delete-btn {
+        background: #171717;
+        border-radius: 3px;
+    }
+
+    .logout-btn:hover,
+    .login-btn:hover,
+    .save-btn:hover,
+    .delete-btn:hover {
+        background: #444;
+    }
+
+    .nav-btn {
+        background: #292929;
+        border-radius: 3px;
+    }
+
+    .nav-btn:hover,
+    .nav-btn.active {
+        background: #fff;
+        color: #171717;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        border-color: #bdbdbd;
+        border-radius: 3px;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+        border-color: #171717;
+        box-shadow: 0 0 0 3px rgba(0, 0, 0, .08);
+    }
+
+    .image-item {
+        border-color: #d0d0d0;
+        border-radius: 4px;
+    }
+
+    .image-item:hover {
+        border-color: #171717;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+    }
+
     .admin-sidebar {
         width: 100%;
         padding: 20px;
@@ -446,3 +527,172 @@ body {
 .admin-review-card .delete-btn { width:auto; }
 .form-group small { display:block; margin-top:6px; color:#777; font-size:12px; }
 @media(max-width:768px){ .admin-card-actions{flex-direction:column}.admin-review-card .review-head{align-items:flex-start;flex-direction:column} }
+
+/* Neutral administrative interface */
+body { background:#f4f4f4; color:#171717; }
+.login-container { background:#111; }
+.login-box, .tab-content { border:1px solid #d6d6d6; border-radius:4px; box-shadow:0 8px 24px rgba(0,0,0,.08); }
+.login-box h1, .tab-content h2, .tab-content h3 { color:#171717; }
+.login-box p, .tab-content h2 { border-color:#171717; }
+.admin-sidebar { background:#171717; box-shadow:none; }
+.logout-btn, .login-btn, .save-btn, .delete-btn { background:#171717; border-radius:3px; }
+.logout-btn:hover, .login-btn:hover, .save-btn:hover, .delete-btn:hover { background:#444; }
+.nav-btn { background:#292929; border-radius:3px; }
+.nav-btn:hover, .nav-btn.active { background:#fff; color:#171717; }
+.form-group input, .form-group textarea { border-color:#bdbdbd; border-radius:3px; }
+.form-group input:focus, .form-group textarea:focus { border-color:#171717; box-shadow:0 0 0 3px rgba(0,0,0,.08); }
+.image-item { border-color:#d0d0d0; border-radius:4px; }
+.image-item:hover { border-color:#171717; box-shadow:0 5px 15px rgba(0,0,0,.1); }
+
+/* Simple neutral theme */
+body { background:#f7f7f7; color:#222; }
+.login-container { background:#f7f7f7; }
+.login-box { max-width:420px; padding:40px; background:#fff; border:1px solid #ddd; box-shadow:0 6px 20px rgba(0,0,0,.08); }
+.login-box h1 { color:#222; }
+.login-box p { color:#666; }
+.admin-dashboard { background:#f7f7f7; }
+.admin-sidebar { background:#e9e9e9; color:#333; border-right:1px solid #d2d2d2; }
+.sidebar-header { border-bottom-color:#d0d0d0; }
+.sidebar-header h2 { color:#333; }
+.logout-btn, .login-btn, .save-btn { background:#333; color:#fff; }
+.logout-btn:hover, .login-btn:hover, .save-btn:hover { background:#111; }
+.nav-btn { background:transparent; color:#555; border:1px solid transparent; }
+.nav-btn:hover { background:#dcdcdc; color:#222; }
+.nav-btn.active { background:#fff; color:#222; border-color:#d0d0d0; }
+.admin-main { padding:32px; }
+.tab-content { background:#fff; border:1px solid #ddd; box-shadow:0 2px 8px rgba(0,0,0,.04); }
+.tab-content h2 { color:#222; border-bottom:1px solid #222; }
+.tab-content h3 { color:#333; }
+.form-group input, .form-group textarea { background:#fff; border:1px solid #ccc; color:#222; }
+.form-group input:focus, .form-group textarea:focus { border-color:#555; box-shadow:0 0 0 2px rgba(0,0,0,.08); }
+.image-item { background:#fafafa; border:1px solid #ddd; }
+.image-item:hover { border-color:#999; box-shadow:0 4px 12px rgba(0,0,0,.08); }
+.secondary-btn { background:#555 !important; }
+.delete-btn { background:#555; }
+.delete-btn:hover { background:#222; }
+
+/* Consistent professional admin layout */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+}
+
+.login-container {
+    min-height: 100vh;
+    background: #f5f5f5;
+}
+
+.login-box {
+    max-width: 390px;
+    padding: 36px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+}
+
+.login-box h1 {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.login-box p {
+    margin-bottom: 26px;
+    color: #777;
+    font-weight: 400;
+}
+
+.login-btn,
+.logout-btn,
+.save-btn,
+.delete-btn {
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.admin-sidebar {
+    width: 250px;
+    padding: 26px 18px;
+    background: #ededed;
+    border-right: 1px solid #d8d8d8;
+    box-shadow: none;
+}
+
+.sidebar-header {
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+}
+
+.sidebar-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.sidebar-nav {
+    gap: 5px;
+}
+
+.nav-btn {
+    padding: 11px 13px;
+    border-radius: 4px;
+    color: #555;
+    font-weight: 500;
+}
+
+.nav-btn.active {
+    background: #fff;
+    border-color: #d4d4d4;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .04);
+}
+
+.admin-main {
+    max-width: 1200px;
+    width: 100%;
+    padding: 36px;
+}
+
+.tab-content {
+    padding: 30px;
+    border-radius: 6px;
+}
+
+.tab-content h2 {
+    margin-bottom: 26px;
+    padding-bottom: 13px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.tab-content h3 {
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 11px 12px;
+    border-radius: 4px;
+}
+
+.image-item,
+.admin-review-card {
+    border-radius: 6px;
+    box-shadow: none;
+}
+
+.image-item img {
+    background: #eee;
+}
+
+.admin-review-card {
+    padding: 18px;
+}
+
+@media (max-width: 768px) {
+    .admin-main {
+        padding: 20px;
+    }
+
+    .tab-content {
+        padding: 22px;
+    }
+}

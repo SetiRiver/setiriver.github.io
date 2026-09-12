@@ -1,6 +1,6 @@
 // Main Website - Firebase live integration
 const firebaseConfig = {
-    apiKey: "AIzaSyDvwxmIQHAGLx7Lt6r38rHFLQVUznHvJp8",
+    apiKey: "AIzaSyBdhcN_5FXIaBOidpa_M9zB7ErKzvmufgk",
     authDomain: "seti-river-resort.firebaseapp.com",
     databaseURL: "https://seti-river-resort-default-rtdb.asia-southeast1.firebasedatabase.app",
     projectId: "seti-river-resort",
@@ -52,6 +52,47 @@ try {
             const fallbackEmail = 'setiriverresort@gmail.com';
             document.querySelectorAll('[data-email]').forEach(el => {
                 el.textContent = data.email || fallbackEmail;
+            });
+        });
+
+        database.ref('website-content/logo').on('value', snapshot => {
+            const source = snapshot.val()?.src || 'logo.png';
+            document.querySelectorAll('.brand img').forEach(img => {
+                img.src = source;
+            });
+            let favicon = document.querySelector('link[rel="icon"]');
+            if (!favicon) {
+                favicon = document.createElement('link');
+                favicon.rel = 'icon';
+                favicon.type = 'image/png';
+                document.head.appendChild(favicon);
+            }
+            favicon.href = source;
+        });
+
+        database.ref('website-content/aboutIcons').on('value', snapshot => {
+            const defaults = {
+                location: 'fa-solid fa-location-dot',
+                pool: 'fa-solid fa-person-swimming',
+                rooms: 'fa-solid fa-bed',
+                experience: 'fa-solid fa-mountain-sun'
+            };
+            const data = snapshot.val() || {};
+            document.querySelectorAll('[data-about-icon]').forEach(container => {
+                const key = container.dataset.aboutIcon;
+                const item = data[key] || {};
+                container.replaceChildren();
+                if (item.image) {
+                    const image = document.createElement('img');
+                    image.src = item.image;
+                    image.alt = '';
+                    container.appendChild(image);
+                    return;
+                }
+                const icon = document.createElement('i');
+                icon.className = item.iconClass || defaults[key] || 'fa-solid fa-star';
+                icon.setAttribute('aria-hidden', 'true');
+                container.appendChild(icon);
             });
         });
     }
