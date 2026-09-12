@@ -687,6 +687,36 @@ body {
     padding: 18px;
 }
 
+.logo-preview-frame {
+    width: 220px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px 0 20px;
+    border: 2px solid #222;
+    background-color: #fff;
+    background-image:
+        linear-gradient(45deg, #e6e6e6 25%, transparent 25%),
+        linear-gradient(-45deg, #e6e6e6 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #e6e6e6 75%),
+        linear-gradient(-45deg, transparent 75%, #e6e6e6 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+}
+
+.logo-preview-frame img {
+    max-width: 180px;
+    max-height: 120px;
+    object-fit: contain;
+}
+
+#saveLogoButton:disabled {
+    background: #c8c8c8;
+    color: #777;
+    cursor: not-allowed;
+}
+
 @media (max-width: 768px) {
     .admin-main {
         padding: 20px;
